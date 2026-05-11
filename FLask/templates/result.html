@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prediction Result</title>
+
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+        height: 100vh;
+		  background: linear-gradient(120deg,#ff512f,#dd2476,#24c6dc,#514a9d);
+
+       }
+
+    .overlay {
+        
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    h2 {
+        color: white;
+        margin-bottom: 20px;
+    }
+
+    .card-container {
+        display: grid;
+        grid-template-columns: repeat(2, 180px);
+        gap: 15px;
+        margin-bottom: 30px;
+    }
+
+    .card {
+        padding: 20px;
+        border-radius: 15px;
+        color: white;
+        text-align: center;
+        font-weight: bold;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+		
+    }
+
+    .provider { background: linear-gradient(45deg, #00c6ff, #0072ff); text-transform:uppercase; }
+    .price { background: linear-gradient(45deg, #ff9800, #ff5722);text-transform:uppercase; }
+    .speed { background: linear-gradient(45deg, #4caf50, #2e7d32);text-transform:uppercase; }
+    .storage { background: linear-gradient(45deg, #9c27b0, #6a1b9a);text-transform:uppercase; }
+
+     
+
+    .btn {
+        margin-top: 20px;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 10px;
+        background: linear-gradient(45deg, #ff5722, #ff9800);
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .btn:hover {
+        transform: scale(1.1);
+    }
+</style>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+</head>
+
+<body>
+<Center><h2>AI-BASED CLOUD SERVICE RECOMMENDATION SYSTEM FOR SMES<br><br>
+</h2>
+<div class="overlay">
+
+    <h2 style="text-transform:uppercase"> Prediction Result</h2>
+
+    <div class="card-container">
+
+        <div class="card provider">
+            Provider <br><br>
+            {{ provider }}
+        </div>
+
+        <div class="card price">
+            Price $. <br><br>
+            {{ price }}
+        </div>
+
+        <div class="card speed">
+            Speed  <br><br>
+            {{ speed }} Mbps
+        </div>
+
+        <div class="card storage">
+            Storage  <br><br>
+            {{ storage_space }} GB
+        </div>
+
+    </div>
+
+   
+
+ <div id="chart"></div>
+
+<script>
+var graph = {{ graphJSON | safe }};
+Plotly.newPlot('chart', graph.data, graph.layout);
+</script>
+
+
+
+</body>
+</html>

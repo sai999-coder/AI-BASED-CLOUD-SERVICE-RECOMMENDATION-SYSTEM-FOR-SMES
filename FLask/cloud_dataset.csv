@@ -1,0 +1,10 @@
+budget,storage,scalability,service,price,speed,storage_space,recommended_provider
+low,small,low,basic,100,50,50,GCP
+low,medium,low,basic,150,60,100,GCP
+low,large,high,advanced,300,90,500,AWS
+medium,medium,low,basic,250,70,200,Azure
+medium,large,high,advanced,500,95,1000,AWS
+medium,small,high,basic,200,80,150,Azure
+high,large,high,advanced,1000,99,2000,AWS
+high,medium,high,advanced,800,95,1500,AWS
+high,small,low,basic,400,70,200,Azure

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cloud Prediction System</title>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+        height: 100vh;
+          background: linear-gradient(120deg,#ff512f,#dd2476,#24c6dc,#514a9d);
+
+		  }
+     
+
+    /* Dark overlay */
+    .overlay {
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.6);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* Glass card */
+    .container {
+        width: 380px;
+        padding: 30px;
+        border-radius: 20px;
+        backdrop-filter: blur(10px);
+        background: rgba(255, 255, 255, 0.15);
+        box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+        color: #fff;
+        text-align: center;
+    }
+
+    h2 {
+        margin-bottom: 20px;
+        color: #fff;
+    }
+
+    label {
+        display: block;
+        text-align: left;
+        margin-top: 10px;
+        font-weight: bold;
+    }
+
+    select {
+        width: 100%;
+        padding: 10px;
+        margin-top: 5px;
+        border-radius: 10px;
+        border: none;
+        outline: none;
+        background: #ffffff;
+        color: #333;
+    }
+
+    button {
+        margin-top: 20px;
+        width: 100%;
+        padding: 12px;
+        border: none;
+        border-radius: 10px;
+        background: linear-gradient(45deg, #ff9800, #ff5722);
+        color: white;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    button:hover {
+        transform: scale(1.05);
+        background: linear-gradient(45deg, #ff5722, #ff9800);
+    }
+
+    .title-icon {
+        font-size: 30px;
+    }
+
+</style>
+</head>
+
+<body>
+<Center><h2>AI-BASED CLOUD SERVICE RECOMMENDATION SYSTEM FOR SMES<br><br>
+
+<div class="overlay">
+    <div class="container">
+
+        <h2><span class="title-icon"></span> Cloud Prediction</h2>
+
+        <form action="/predict" method="post">
+
+            <label>Budget</label>
+            <select name="budget">
+                <option value="low">Low</option>
+                <option value="medium">Medium</option>
+                <option value="high">High</option>
+            </select>
+
+            <label>Storage</label>
+            <select name="storage">
+                <option value="small">Small</option>
+                <option value="medium">Medium</option>
+                <option value="large">Large</option>
+            </select>
+
+            <label>Scalability</label>
+            <select name="scalability">
+                <option value="low">Low</option>
+                <option value="high">High</option>
+            </select>
+
+            <label>Service Type</label>
+            <select name="service">
+                <option value="basic">Basic</option>
+                <option value="advanced">Advanced</option>
+            </select>
+
+            <button type="submit"> Predict Now</button>
+
+        </form>
+
+    </div>
+</div>
+
+</body>
+</html>
